@@ -145,7 +145,7 @@ const TaskForm = ({ date, setTasks }) => {
     const newTask = { date, category, priority, title, description };
 
     try {
-      const response = await fetch("http://localhost:5000/tasks", {
+      const response = await fetch("https://task-calender-backend-git-main-nithin2023-creators-projects.vercel.app/tasks", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newTask),

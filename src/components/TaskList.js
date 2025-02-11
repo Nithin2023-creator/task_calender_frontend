@@ -18,7 +18,7 @@ const TaskList = ({ tasks, setTasks }) => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:5000/tasks/${id}`, {
+      await fetch(`https://task-calender-backend-git-main-nithin2023-creators-projects.vercel.app/tasks/${id}`, {
         method: 'DELETE',
       });
       setTasks(prev => prev.filter(task => task._id !== id));
@@ -34,7 +34,7 @@ const TaskList = ({ tasks, setTasks }) => {
 
   const handleUpdate = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/tasks/${id}`, {
+      const response = await fetch(`https://task-calender-backend-git-main-nithin2023-creators-projects.vercel.app/tasks/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

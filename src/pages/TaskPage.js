@@ -11,7 +11,7 @@ const TaskPage = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/tasks?date=${date}`).then((res) => {
+    axios.get(`https://task-calender-backend-git-main-nithin2023-creators-projects.vercel.app/tasks?date=${date}`).then((res) => {
       setTasks(res.data);
     });
   }, [date]);
