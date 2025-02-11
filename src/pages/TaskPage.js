@@ -16,18 +16,26 @@ const TaskPage = () => {
     });
   }, [date]);
 
+  // Format date for display
+  const formatDate = (dateStr) => {
+    const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+    return new Date(dateStr).toLocaleDateString(undefined, options);
+  };
+
   return (
-    <div className="p-4 sm:p-5 max-w-4xl mx-auto">
-      <div className="flex items-center gap-4 mb-6">
+    <div className="p-2 sm:p-5 max-w-4xl mx-auto">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4 sm:mb-6">
         <button 
           onClick={() => navigate('/')} 
-          className="btn-primary flex items-center gap-2"
+          className="btn-primary flex items-center gap-2 text-sm sm:text-base w-fit"
           aria-label="Back to calendar"
         >
           <ArrowLeft className="w-4 h-4" />
           Back
         </button>
-        <h2 className="text-xl sm:text-2xl">Tasks for {date}</h2>
+        <h2 className="text-lg sm:text-2xl font-medium">
+          Tasks for {formatDate(date)}
+        </h2>
       </div>
       <TaskForm date={date} setTasks={setTasks} />
       <TaskList tasks={tasks} setTasks={setTasks} />
