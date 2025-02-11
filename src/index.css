@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Force dark mode */
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-gray-900;
+  @apply text-white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make inputs and selects dark by default */
+input, select, textarea {
+  @apply bg-gray-800 text-white border-gray-700;
+  color-scheme: dark;
+}
